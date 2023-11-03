@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "EjemploEntradaSalida": {
+      "commandName": "Project",
+      "commandLineArgs": "ASD"
+    }
+  }
+}
