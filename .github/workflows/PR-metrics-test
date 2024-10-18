@@ -1,0 +1,16 @@
+name: PR Metrics
+
+on:
+ pull_request:
+    branches: [ "main" ]
+
+jobs:
+  pr_metrics:
+    runs-on: ubuntu-latest
+
+    steps:
+uses: microsoft/PR-Metrics@v1.6.3
+name: PR Metrics
+env:
+  PR_METRICS_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+continue-on-error: true
