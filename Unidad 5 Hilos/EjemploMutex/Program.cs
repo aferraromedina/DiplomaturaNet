@@ -20,6 +20,7 @@ namespace EjemploMutex
 
             hiloUNO.Start();
             hiloDOS.Start();
+            
         }
         private static void TrabajoPesado()
         {
