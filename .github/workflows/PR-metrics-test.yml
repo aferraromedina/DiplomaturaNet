@@ -1,15 +1,18 @@
-name: PR Metrics
+name: Etiquetado de PRs por tamaño
 
 on:
- pull_request:
-    branches: [ "main" ]
+  pull_request:
+    branches: 
+      - "main"
 
 jobs:
   pr_metrics:
+    name: PWX
     runs-on: ubuntu-latest
 
     steps:
-uses: microsoft/PR-Metrics@v1.6.3
-env:
-  PR_METRICS_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-continue-on-error: true
+      - uses: microsoft/PR-Metrics@v1.6.5
+        env:
+          PR_METRICS_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    continue-on-error: true
