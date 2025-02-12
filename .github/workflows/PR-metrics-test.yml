@@ -9,7 +9,9 @@ jobs:
   pr_metrics:
     name: Etiquetado
     runs-on: ubuntu-latest
-
+    permissions:
+        pull-requests: write
+        statuses: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,5 +20,6 @@ jobs:
       - uses: microsoft/PR-Metrics@v1.6.5
         env:
           PR_METRICS_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
     continue-on-error: true
