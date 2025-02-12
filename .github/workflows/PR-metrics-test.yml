@@ -10,7 +10,6 @@ jobs:
 
     steps:
 uses: microsoft/PR-Metrics@v1.6.3
-name: PR Metrics
 env:
   PR_METRICS_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 continue-on-error: true
