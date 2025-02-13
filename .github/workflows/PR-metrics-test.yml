@@ -37,10 +37,10 @@ jobs:
       with:
         name: release-test.zip
         path: |
-            "Unidad 5 Hilos/EjemploMutex/bin/Release" # or path/to/artifact
-            "Unidad 5 Hilos/EjemploMonitor/bin/Release" # or path/to/artifact
-            "Unidad 5 Hilos/EjemploJoin/bin/Release" # or path/to/artifact
-            "Unidad 5 Hilos/EjemploInterlocked/bin/Release" # or path/to/artifact
-            "Unidad 5 Hilos/AsyncAwait/bin/Release" # or path/to/artifact
+            "Unidad 5 Hilos/EjemploMutex/bin/Release/*" # or path/to/artifact
+            "Unidad 5 Hilos/EjemploMonitor/bin/Release/*" # or path/to/artifact
+            "Unidad 5 Hilos/EjemploJoin/bin/Release/*" # or path/to/artifact
+            "Unidad 5 Hilos/EjemploInterlocked/bin/Release/*" # or path/to/artifact
+            "Unidad 5 Hilos/AsyncAwait/bin/Release/*" # or path/to/artifact
 
     continue-on-error: true
