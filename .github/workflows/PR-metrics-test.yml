@@ -33,6 +33,15 @@ jobs:
     #- run: dotnet restore --locked-mode
     - run: dotnet build "Unidad 5 Hilos/EjemploHilos.sln" -c Release
 
+    - name: List files in the repository
+      run: |
+        echo "Listando los archivos en el repositorio:"
+        ls -R # Esto lista todos los archivos recursivamente
+        echo "-------------------------------------"
+        echo "Archivos en la carpeta src:"
+        ls "Unidad 5 Hilos"  # O cualquier otra carpeta que desees listar
+        echo "-------------------------------------"
+
     - uses: actions/upload-artifact@v4
       with:
         name: release-test.zip
