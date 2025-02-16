@@ -9,7 +9,7 @@
             // esto es especialmente util en entornos concurrentes (Aplicaciones webs, servicios Rest, etc)
             await Task.Run(SaludarDesdeTarea);
             Console.WriteLine("Principal");
-            
+
             // Tambien se puede ejecutar tareas en paralelo sobre listas
             var numeros = new List<int>();
             for (int i = 0; i < 1500; i++)
@@ -31,7 +31,6 @@
             };
             Parallel.Invoke(actions);
         }
-
         static void SaludarDesdeTarea()
         {
             for (int i = 0; i < 10; i++)
