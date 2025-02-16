@@ -54,6 +54,7 @@ jobs:
      #   cache: true
     #- run: dotnet restore --locked-mode
     - run: dotnet build "Unidad 5 Hilos/EjemploHilos.sln" -c Release
+    #- run: dotnet test --no-build --configuration Release 
 
     - name: List files in the repository
       run: |
