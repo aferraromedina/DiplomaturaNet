@@ -4,25 +4,25 @@
     {
         static async Task Main(string[] args)
         {
-            // Ejecua en paralelo este metodo y espera a que termine, util para las llamadas bloqueantes (Entrada Salida)
-            // dado que el hilo que queda bloqueado es un hilo dentro del pool y no la propia aplicacion
-            // esto es especialmente util en entornos concurrentes (Aplicaciones webs, servicios Rest, etc)
+            // Ejecuta SaludarDesdeTarea en un hilo del ThreadPool y espera su finalización.
+            // Este enfoque es útil cuando el trabajo es bloqueante (por ejemplo, E/S), porque evita
+            // ocupar el hilo principal y mejora la capacidad de respuesta en escenarios concurrentes.
             await Task.Run(SaludarDesdeTarea);
             Console.WriteLine("Principal");
             
-            // Tambien se puede ejecutar tareas en paralelo sobre listas
+            // También se pueden paralelizar operaciones sobre colecciones.
             var numeros = new List<int>();
             for (int i = 0; i < 1500; i++)
             {
                 numeros.Add(i);
             }
 
-            // Ejecuta una accion (en paralelo si es posible) sobre una coleccion
+            // Ejecuta una acción por cada elemento, usando varios hilos cuando es posible.
             Parallel.ForEach(numeros, MostrarNumeros);
 
-            // Tambien existe la posibilidad de ejecutar muchas acciones en paralelo
-            // Para simplificar repito el mismo metodo, pero en un uso real seria diferentes acciones
-            // que tengan sentido lanzarlas en paralelo.
+            // También se pueden lanzar varias acciones independientes al mismo tiempo.
+            // Aquí se reutiliza el mismo método para simplificar el ejemplo, pero normalmente
+            // serían tareas distintas que no dependen entre sí.
             var actions = new Action[]
             {
                 Saludar,
@@ -36,7 +36,7 @@
         {
             for (int i = 0; i < 10; i++)
             {
-                // Simulamos un tiempo de trabajo
+                // Simula una operación costosa o bloqueante.
                 Thread.Sleep(200);
                 Console.WriteLine("Hola desde una tarea");
             }
